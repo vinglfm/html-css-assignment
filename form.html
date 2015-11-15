@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link href="form.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+	<form action="http://www.destination.com" method="get">
+		<p class="bordered">Area to describe your idea</p>
+		<textarea rows="3" cols="60" name="idea" autofocus>			
+		</textarea>
+		<br>
+		<input type="submit" value="Send">
+	</form>
+	<form>
+		<input type="radio" name="model" value="BMW">BMW<br>
+		<input type="radio" name="model" value="Honda">Honda<br>
+		<input type="radio" name="model" value="Hundai">Hundai<br>
+		
+		<input type="checkbox" name="carType" value="sport">Sport<br>
+		<input type="checkbox" name="carType" value="home">Home<br>
+	</form>	
+	<form>
+		<input type="password" placeholder="What is on your mind." name="password"><!-- dont use password with get method-->
+		<input type="submit" value="Send" method="post">
+	</form>
+	<form class="bordered">
+		<select name="cities">
+			<option value="honda">Honda</option>
+			<option value="subaru">Subaru</option>
+		</select>
+	</form>
+	<form action="teamManager.com" method="post" enctype="multipart/form-data">
+		<input type="text" name="team" required><br>
+		<input type="file" name="logo" required><br>
+		<input type="submit" value="upload">
+	</form>
+	<div class="bordered">
+	<font action="personality.com">
+		<label for="age">Your age:</label>
+		<input type="number" min="19" max="75" step="1" value="19" 
+			id="age" name="age" required><br>
+		<label style="border:1px solid" for="birthday">Your birthday:</label>
+		<input type="date" id="birthday" name="birthday"><br>
+		<label for="dinnerTime">Your dinnerTime:</label>
+		<input type="time" id="dinnerTime" name="dinnerTime"><br>
+		<label for="color">Your birthday:</label>
+		<input type="color" id="color" name="color"><br>
+		<label class="bordered" for="mood">Your mood:</label>
+		Bad<input type="range" min="0" max="100" step="5" value="50" 
+			id="mood" name="mood">Good<br>
+		<input type="submit" value="Save">
+	</form>
+	<div>
+	<form> 
+		<fieldset>
+			<legend>Personal Data</legend>
+			First name: <input type="text" name="first_name"><br>
+			Second name: <input type="text" name="second_name"><br>
+		</fieldset> <br>
+	</form>
+</body>
+</html>

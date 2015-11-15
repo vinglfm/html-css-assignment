@@ -1,0 +1,71 @@
+body {
+	background-color:gray
+}
+h1 {
+	color:purple;
+	font-family:Arial, 'Helvetica Neue', Helvetica, sans-serif;
+	font-size:25px;
+	text-align:right;
+}
+h1:hover {
+	color:green;
+	font-family: "Times New Roman", Georgia, Serif;
+	font-size:25px;
+	text-align:right;
+}
+
+p {color:blue}
+#numbers{background-color:#33CCCC}
+#first{color:orange}
+#second{color:green}
+#third{color:blue}
+#forth{color:yellow}
+#fifth{color:purple}
+
+ul {
+	list-style-image:url('icon48.png')
+}
+
+.smilly{
+	background-color:#006699
+}
+.overriden-smilly{
+	background-color:white
+}
+.overriden-colored{
+	color:white
+}
+
+img{
+	margin:50px
+}
+
+ul li{
+	color:green
+}
+
+a:link {
+	background-color:blue;
+	color:black;
+}
+a:visited{background-color:white}
+a:active{background-color:brown}
+p:empty{background-color:#CC9999}
+
+table, td, th {
+	border:1px solid black;
+	padding:15px
+}
+td {color:purple}
+.t{
+	vertical-align:top;
+	text-align:middle;
+}
+.m{
+	vertical-align:middle;
+	text-align:left;
+}
+.b{
+	vertical-align:bottom;
+	text-align:right;
+}

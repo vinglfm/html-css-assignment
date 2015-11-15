@@ -1,0 +1,45 @@
+div has no default style;
+	has no default meaning;
+	can be used for any purposes.
+span has no particular style;
+	 has no particular meaning;
+	 uses for a few words(keep a sentence in one line).
+	
+
+<!doctype html>
+<html>
+<head>
+    <style>
+        p { color: red; }
+        p { color: blue; }
+    </style>
+</head>
+<body>
+    <p class="heading">Welcome!</p>
+</body>
+</html>	
+In this kind of simple case, when more than one style rule is applied to the same element, the later the rule is listed, the higher precedence it has.
+In this question, since the second p rule comes later than the first p rule, the second p rule has a higher precedence. Hence the paragraph text is in blue.
+
+<!doctype html>
+<html>
+<head>
+    <style>
+        p { color: red; }
+        .heading { color: blue; }
+    </style>
+</head>
+<body>
+    <p style="color: green" class="heading">Welcome!</p>
+</body>
+</html>
+The inline style rule always has the highest precedence.
+
+In this question, since there is an inline style rule applied to the paragraph, it has the highest precedence and overrides the p rule and the .heading rule defined in <style>. Hence the paragraph text is in green.
+
+<form action="http://www.otherserver.com/program.php"></form>
+<form action="sameserver/program.php"></form>
+<form action="programinsamefolder.php"></form>
+
+get is default method (used if method argument is absent)
+post doesn't send a data in url like post, can handle a big transmission

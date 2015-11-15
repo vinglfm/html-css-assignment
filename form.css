@@ -1,0 +1,17 @@
+fieldset {
+	width:50%
+}
+select:hover {
+	background-color:blue
+}
+.colored {
+	color:blue
+}
+
+.bordered {
+	border-style: groove dotted;
+}
+
+form.bordered {
+	border-style: inset
+}
