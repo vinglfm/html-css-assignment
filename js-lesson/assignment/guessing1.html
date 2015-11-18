@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+	<body onload="guessingGame()">
+		<script>
+		function guessingGame() {
+			var colors = ['aliceblue', 'aquamarine', 'bisque', 'cadetblue', 'deepskyblue', 'lightcyan'];
+			var colorToGuess = colors[Math.floor(Math.random() * colors.length)];
+			alert("By the way, color to guess is ... " + colorToGuess);
+			var answerCount = 0;
+			do {
+				var answer = prompt("I am thinking of one of these colors:\n\n" +
+									colors + "\n\nWhat color am I thinking of?");
+				++answerCount;
+			} while(answer != colorToGuess)
+		}
+		</script>
+	</body>
+</html>

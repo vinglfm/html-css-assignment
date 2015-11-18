@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<body onload="guessingGame()">
+		<script>
+    var answerCount = 0;
+    var colorToGuess;
+
+    function guessingGame(){
+      var colors = ['aliceblue', 'aquamarine', 'bisque', 'cadetblue', 'deepskyblue', 'lightcyan'];
+    	colorToGuess = colors[Math.floor(Math.random() * colors.length)];
+    	alert("By the way, color to guess is ... " + colorToGuess);
+    	do {
+    		var answer = prompt("I am thinking of one of these colors:\n\n" +
+    							colors + "\n\nWhat color am I thinking of?");
+    		++answerCount;
+    	} while(!validateAnswer(colors, answer) || !checkAnswer(answer))
+    }
+
+    function validateAnswer(colors, answer) {
+      if(colors.indexOf(answer) == -1) {
+        alert("Sorry, I don't recognize your color.\n\nPlease try again.");
+        return false;
+      }
+      return true;
+    }
+
+    function checkAnswer(answer) {
+    	switch(colorToGuess.localeCompare(answer)) {
+    			case 0:
+            document.body.style.backgroundColor  = answer;
+    				alert("Congratulations! You have guessed the color!\n\n" +
+    				"It took " + answerCount + " guesses to finish the game!\n\n" +
+    				"You can see the colour in the background.");
+    				return true;
+    			case -1:
+    				alert("Sorry, your guess is not correct!\n\n" +
+    						"Hint: your color is alphabetically higher then mine.\n\n" +
+    						"Please try again.");
+    				return false;
+    			case 1:
+    				alert("Sorry, your guess is not correct!\n\n" +
+    						"Hint: your color is alphabetically lower then mine.\n\n" +
+    						"Please try again.");
+    				return false;
+    	}
+    }
+		</script>
+	</body>
+</html>
