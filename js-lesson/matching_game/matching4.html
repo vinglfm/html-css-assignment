@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+img {
+position:absolute;
+}
+div {
+position:absolute;
+}
+
+div.rightSide, div.leftSide {
+width:500px;
+height:500px;
+}
+
+div.rightSide {
+left:500px;
+border-left:1px solid black;
+}
+</style>
+</head>
+<body id="theBody" onload="generateFaces(5);">
+<h2>Matching game</h2>
+<p>Click on the extra smiling face on the left</p>
+<div id="leftSide" class="leftSide"></div>
+<div id="rightSide" class="rightSide"></div>
+<script>
+
+function generateFaces(numberOfFaces) {
+	var theLeftSide = document.getElementById("leftSide");
+	var theRightSide = document.getElementById("rightSide");
+	for(var i = 0; i < numberOfFaces; ++i) {
+		var img = document.createElement("img");
+		img.src = "smile.png";
+		img.style.top= randomPosition();
+		img.style.left=randomPosition();
+		theLeftSide.appendChild(img);
+	}
+	
+	var images = theLeftSide.cloneNode(true);
+	images.removeChild(images.lastChild);
+	theRightSide.appendChild(images);
+	var theBody = document.getElementById("theBody");
+	theBody.onclick = function gameOver() {
+		alert("You haven't found a right smile.");
+		theBody.onclick = null;
+		theLeftSide.lastChild.onclick = null;
+	}
+	theLeftSide.lastChild.onclick = function nextLevel(event) {
+		event.stopPropagation();	
+		
+		removeAllNodes(theLeftSide);
+		removeAllNodes(theRightSide);
+		
+		generateFaces(numberOfFaces + 5);
+	};
+}
+
+function randomPosition() {
+	return Math.ceil(Math.random() * 401) + "px";
+}
+
+function removeAllNodes(parentNode) {
+	while(parentNode.firstChild) {
+		parentNode.removeChild(parentNode.firstChild);
+	}
+}
+</script>
+</body>
+</html>
