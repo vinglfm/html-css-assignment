@@ -34,6 +34,10 @@ body{
     z-index:0;
 }
 
+.header-text {
+    color:floralwhite;
+}
+
 .navbar-inverse {
      background: #303F9F;
 }
